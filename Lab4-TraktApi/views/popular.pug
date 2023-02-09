@@ -1,0 +1,14 @@
+extends layout 
+
+block main-content 
+    h1.page-title 15 most popular movies: 
+    table 
+        tr 
+            th Show title 
+            th Year 
+        each s in shows
+            tr 
+                td
+                    a(href=`https://www.imdb.com/title/${s.ids.imdb}/`) #{s.title}
+                td #{s.year}
+                

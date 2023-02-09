@@ -1,0 +1,16 @@
+extends layout 
+
+
+block main-content 
+  //You can overwrite the main-content block by writing block content
+  //in the template file which is extending.
+  h1  Here are some cool movies: 
+  ul 
+    each m in movies 
+      li 
+        - url = `/movieStudios?id=${m.movie.ids.imdb}`;
+        a(href=url) #{m.movie.title}
+        div (Watching: #{m.watchers})
+
+  
+  
